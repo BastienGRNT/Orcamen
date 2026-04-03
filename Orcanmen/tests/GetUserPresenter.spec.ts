@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { GetUserPresenter } from '$lib/domain/users/adapters/User.Presenter';
-import { User } from '$lib/domain/User';
+import { User } from '$lib/domain/users/User.ts';
 
 describe('GetUserPresenter', () => {
     it('doit formater une entité User en GetUserViewModel', () => {

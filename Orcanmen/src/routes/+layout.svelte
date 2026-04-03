@@ -15,19 +15,36 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
-<header>
-	{#if data.user}
-		<Button>
-			<LogOut />
-			<a href="/auth/logout" data-sveltekit-preload-data="off">Logout</a>
-		</Button>
-	{:else}
-		<Button>
-			<LogIn />
-			<a href="/auth/login">Login</a>
-		</Button>
-	{/if}
 
-	<ThemeToggle />
+<header class="flex flex-row items-center justify-between px-8 py-4 border-b-1 border-foreground">
+	<h1 class="text-xl font-bold">
+		<a href="/">
+			Orcanmen
+		</a>
+	</h1>
+
+	<nav class="flex flex-row gap-4">
+		<a class="font-medium border-b-1 border-foreground" href="/a">Test</a>
+		<a class="font-medium border-b-1 border-foreground" href="/b">Test</a>
+		<a class="font-medium border-b-1 border-foreground" href="/c">Test</a>
+		<a class="font-medium border-b-1 border-foreground" href="/d">Test</a>
+	</nav>
+
+	<div class="flex flex-row gap-4">
+		{#if data.user}
+			<Button>
+				<LogOut />
+				<a href="/auth/logout" data-sveltekit-preload-data="off">Logout</a>
+			</Button>
+		{:else}
+			<Button>
+				<LogIn />
+				<a href="/auth/login">Login</a>
+			</Button>
+		{/if}
+
+		<ThemeToggle />
+	</div>
 </header>
+
 {@render children()}

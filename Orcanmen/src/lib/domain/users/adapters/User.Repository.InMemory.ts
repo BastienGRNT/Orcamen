@@ -1,5 +1,5 @@
 import type {UserRepository} from "$lib/domain/users/ports/User.Repository";
-import {User} from "$lib/domain/User";
+import {User} from "$lib/domain/users/User.ts";
 
 export class UserRepositoryInMemory implements UserRepository {
     async getUser(): Promise<User> {

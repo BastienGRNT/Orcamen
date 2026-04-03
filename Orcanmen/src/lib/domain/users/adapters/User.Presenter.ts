@@ -1,5 +1,5 @@
 import type { UserPresenter } from "$lib/domain/users/ports/User.Presenter";
-import type { User } from "$lib/domain/User";
+import type { User } from "$lib/domain/users/User.ts";
 
 export type GetUserViewModel = {
     name: string;
