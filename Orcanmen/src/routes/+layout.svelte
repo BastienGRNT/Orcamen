@@ -32,15 +32,20 @@
 
 	<div class="flex flex-row gap-4">
 		{#if data.user}
-			<Button>
-				<LogOut />
-				<a href="/auth/logout" data-sveltekit-preload-data="off">Logout</a>
-			</Button>
+			<a href="/auth/logout" data-sveltekit-preload-data="off">
+				<Button>
+					<LogOut />
+					Logout
+				</Button>
+			</a>
+
 		{:else}
-			<Button>
-				<LogIn />
-				<a href="/auth/login">Login</a>
-			</Button>
+			<a href="/auth/login">
+				<Button>
+					<LogIn />
+					Login
+				</Button>
+			</a>
 		{/if}
 
 		<ThemeToggle />

@@ -1,3 +1,5 @@
+import { ClientError, type Result } from '$lib';
+
 export type BankAccount = {
 	id: number;
 	userId: string;
@@ -13,7 +15,5 @@ export type BankAccountSummary = {
 export type NewBankAccount = Omit<BankAccount, 'id'>;
 
 export interface BankAccountRepository {
-	getAllUserBankAccounts(userId: string): Promise<BankAccount[]>;
-	addUserBankAccount(account: NewBankAccount): Promise<BankAccount>;
-	getUserBankAccountSummaries(userId: string): Promise<BankAccountSummary[]>;
+	addUserBankAccount(account: NewBankAccount): Promise<Result<NewBankAccount, ClientError>>;
 }

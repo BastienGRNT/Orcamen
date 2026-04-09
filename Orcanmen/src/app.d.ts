@@ -4,12 +4,14 @@ import type { User, Session } from 'better-auth/minimal';
 // for information about these interfaces
 declare global {
 	namespace App {
+		interface Error {
+			message: string;
+		}
 		interface Locals {
 			user?: User;
 			session?: Session;
 		}
 
-		// interface Error {}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
